@@ -533,7 +533,7 @@ typedef struct {
 } jl_codectx_t;
 
 typedef struct {
-    int len;
+    size_t len;
     struct {
         int64_t isref;
         Function *f;
