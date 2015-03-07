@@ -68,6 +68,11 @@ Language changes
     macro. Instead, the string is first unindented and then `x_str` is invoked,
     as if the string had been single-quoted ([#10228]).
 
+  * Colons (`:`) within indexing expressions are no longer lowered to the range
+    `1:end`. Instead, the `:` identifier is passed directly. Custom array types
+    that implement `getindex` or `setindex!` methods should also extend those
+    methods to support arguments of type `Colon` ([#10331]).
+
 Compiler improvements
 ---------------------
 
@@ -1242,3 +1247,4 @@ Too numerous to mention.
 [#10117]: https://github.com/JuliaLang/julia/issues/10117
 [#10180]: https://github.com/JuliaLang/julia/issues/10180
 [#10228]: https://github.com/JuliaLang/julia/issues/10228
+[#10331]: https://github.com/JuliaLang/julia/issues/10331
